@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="map.MainPage">
+    <ContentPage.Content>
+        
+        <StackLayout Orientation="Vertical" BackgroundColor="Green">
+            <Label Text="Contact Us" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="20" TextColor="Red"/>
+            <StackLayout HeightRequest="500" Margin="10">
+       <maps:Map x:Name="map" MapType="Street" HasZoomEnabled="True">
+            <x:Arguments>
+                <maps:MapSpan>
+                    <x:Arguments>
+                        <maps:Position>
+                            <x:Arguments>
+                                <x:Double>53.7507479</x:Double>
+                                <x:Double>-2.4511228</x:Double>
+                            </x:Arguments>
+                        </maps:Position>
+                        <x:Double>0.01</x:Double>
+                        <x:Double>0.01</x:Double>
+                    </x:Arguments>
+                </maps:MapSpan>
+            </x:Arguments>
+           <maps:Map.Pins>
+                <maps:Pin Label="SAM HOUSE"
+                          Address="ADDRESS1"
+                          Type="Place">
+                    <maps:Pin.Position>
+                        <maps:Position>
+                            <x:Arguments>
+                                <x:Double>53.7507479</x:Double>
+                                <x:Double>-2.4511228</x:Double>
+                            </x:Arguments>
+                        </maps:Position>
+                    </maps:Pin.Position>
+                </maps:Pin>
+          </maps:Map.Pins>
+       </maps:Map>
+       </StackLayout>
+            <Label FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" Margin="100,0,100,0" MaxLines="2" TextType="Html" Text="Address of your Location. Address  &#10; of your location.Address of your Location. Address  &#10; of your location  "></Label>
+       </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
